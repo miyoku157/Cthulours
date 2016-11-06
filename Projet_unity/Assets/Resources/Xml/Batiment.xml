@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMLRules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XMLRules.xsd">
+  <RuleBase>
+    <Variables>
+      <Name>Agressivite</Name>
+      <Type>2</Type>
+      <Value>
+        <Float>0</Float>
+      </Value>
+      <UpdateScript>
+        <ScriptName>AiRuleEngine.AgressSensor</ScriptName>
+      </UpdateScript>
+    </Variables>
+    <Rules>
+      <Name>choosemind</Name>
+      <Condition>
+        <Relational>
+          <LHSArithmeticExpression>
+            <Value>
+              <Variable>
+                <Name>Agressivite</Name>
+                <Type>2</Type>
+              </Variable>
+            </Value>
+          </LHSArithmeticExpression>
+          <RelationalOperator>
+            <GreaterThan>GreaterThan</GreaterThan>
+          </RelationalOperator>
+          <RHSArithmeticExpression>
+            <Value>
+              <Constant>
+                <Integer>0</Integer>
+              </Constant>
+            </Value>
+          </RHSArithmeticExpression>
+        </Relational>
+      </Condition>
+      <Action>
+        <CallScript>
+          <ScriptName>AiRuleEngine.ChooseMind</ScriptName>
+        </CallScript>
+      </Action>
+      <Priority>100</Priority>
+    </Rules>
+  </RuleBase>
+</XMLRules>
